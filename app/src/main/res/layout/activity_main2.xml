@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.freegeek.dz.MainActivity">
+
+
+    <GridLayout
+        android:layout_width="369dp"
+        android:layout_height="547dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="563dp"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="进制转换"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="77dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_weight="0.32"
+                    android:text="D"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+
+                <com.freegeek.dz.view.RadixEditText
+                    android:id="@+id/et_dec"
+                    style="@style/CardEditText"
+                    android:layout_width="303dp"
+                    android:layout_height="67dp"
+                    android:digits="0123456789."
+                    android:hint="@string/hint1"
+                    android:text=""
+                    android:textColor="@color/white"
+                    app:radix="10" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="B"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+
+                <com.freegeek.dz.view.RadixEditText
+                    android:id="@+id/et_binary"
+                    style="@style/CardEditText"
+                    android:layout_width="303dp"
+                    android:layout_height="54dp"
+                    android:digits="01."
+                    android:hint="2"
+                    android:text=""
+                    app:radix="2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="53dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="O"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+
+                <com.freegeek.dz.view.RadixEditText
+                    android:id="@+id/et_octal"
+                    style="@style/CardEditText"
+                    android:layout_width="298dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.11"
+                    android:digits="01234567."
+                    android:hint="8"
+                    android:text=""
+                    app:radix="8" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="0.67">
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="H"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+
+                <com.freegeek.dz.view.RadixEditText
+                    android:id="@+id/et_radix"
+                    style="@style/CardEditText"
+                    android:layout_width="303dp"
+                    android:layout_height="match_parent"
+                    android:digits="0123456789ABCDEF."
+                    android:hint="16"
+                    android:text=""
+                    app:radix="16" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_label_misc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="3"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+
+                <com.freegeek.dz.view.RadixEditText
+                    android:id="@+id/et_misc"
+                    style="@style/CardEditText"
+                    android:layout_width="301dp"
+                    android:layout_height="wrap_content"
+                    android:digits="0123456789ABCDEF."
+                    android:hint="@string/more_radix"
+                    android:text=""
+                    app:radix="3"
+                    android:layout_weight="0.04" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button12"
+                    style="@style/Key"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="返回"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+            </LinearLayout>
+
+            <com.freegeek.dz.view.Keyboard
+                android:id="@+id/keyboard"
+                layout="@layout/keyboard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_weight="0.55"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp">
+
+            </com.freegeek.dz.view.Keyboard>
+
+        </LinearLayout>
+
+    </GridLayout>
+
+</android.support.constraint.ConstraintLayout>
